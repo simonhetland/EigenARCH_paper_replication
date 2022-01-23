@@ -1,0 +1,36 @@
+This folder contain code and data necessary to replicate 
+"Dynamic conditional eigenvalues" by Hetland, Pedersen and Rahbek (2020).
+
+USBanks.xlsx is the dataset given in log-returns (multiplied b 100)
+
+The file names should be self-explanatory, e.g.
+- "main_EigenARCH_application_unrestricted.m" replicates the results from tables 1
+ concerning the unrestricted model.
+- "main_EigenARCH_application_rank_2.m" replicates the results from tables 2+3 concerning
+the model with reduced rank 2.
+- "main_EigenARCH_application_rank_1.m" replicates the model with reduced rank 1, 
+these results are not reported in the paper.
+
+The folder also contain the two files:
+"main_EigenARCH_application_unrestricted_repar.m" and  "main_EigenARCH_application_rank_2_repar.m",
+in which the model is reparameterized in such a way, that the unconstrained optimized
+can be used. We use this to compute the standard erros of the models. This approach
+changes the parameter space to be R, ensuring no issues in finding the numerical derivatives,
+which are used to compute the sandwhich formula.
+
+Furthermore, the files "main_EigenARCH_bootstrap_rank_1.m" and "main_EigenARCH_bootstrap_rank_2.m" 
+compute the bootstrap critical value for the null hypothesis of a reduced rank.
+These use the parameter estimates and restricted residuals from 
+"main_EigenARCH_application_rank_1.m" and "main_EigenARCH_application_rank_2.m".
+
+Next, "main_EigenARCH_supLR_res_row1.m" computes the supLR test and associated value
+for the hypothesis of a zero row in the matrices A and B. This hypothesis is imposed
+on the first row (imposing it on row 2 or 3 does not change the results significantly)
+
+The files "main_top_Lyapunov_rca_rank_2_repar_resampled.m" and 
+"main_top_lyapunov_rca_unrestricted_repar_resampled."m compute the top Lyapunov 
+coefficient and the associated standard error (based on the numerical delta method)
+
+Finally, "main_SDE_t.m" contains code for estimating the model based on the multivariate
+t-distribution. These estimation results are not reported in the paper.
+
