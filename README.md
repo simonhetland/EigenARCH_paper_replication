@@ -5,5 +5,5 @@ The published version is available here: https://www.sciencedirect.com/science/a
 
 The workign paper is available here: https://drive.google.com/file/d/1xbnTigrdR_mE6P2BWer21DZjI-_GKpEr/view
 
-Please see the file "EigenARCH_code_documentation.txt" in for details on the code.
+Please see the file "EigenARCH_code_documentation.txt" for details on the code.
 
